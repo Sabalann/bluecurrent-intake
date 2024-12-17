@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --dodger-blue: #39f;
+  --ice-blue: #e5f2ff;
+  --white: #f4f4f4;
+  --ice-blue-two: #eef7ff;
+}
+
+@font-face {
+  font-family: MuseoSans;
+  src: local(MuseoSans-300),
+    url(/path/to/MuseoSans-300.woff2) format("woff2"),
+    url(/path/to/MuseoSans-300.woff) format("woff"),
+    url(/path/to/MuseoSans-300.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: MuseoSans;
+  src: local(MuseoSans-700),
+    url(/path/to/MuseoSans-700.woff2) format("woff2"),
+    url(/path/to/MuseoSans-700.woff) format("woff"),
+    url(/path/to/MuseoSans-700.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+.Text-Style-4 {
+  font-family: MuseoSans;
+  font-size: 2rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #093550;
+}
+.Text-Style-2 {
+  font-family: MuseoSans;
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #fff;
+}
+.Text-Style {
+  font-family: MuseoSans;
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: var(--dodger-blue);
+}
+.Keuzekop {
+  font-family: MuseoSans;
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #093550;
+}
+.Text-Style-3 {
+  font-family: MuseoSans;
+  font-size: 1.125rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2aa5ff;
+}
+.Text {
+  font-family: MuseoSans;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #58727e;
+}
+input {
+  font-family: MuseoSans;
+  font-size: 0.75rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  color: #6b9bc4;
+}
+
