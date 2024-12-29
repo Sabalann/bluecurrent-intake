@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './mainPage.css';
+import ProductSelection from './ProductSelection';
+import Payment from './Payment';
 
 const BluecurrentLogo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="70" height="43" viewBox="0 0 70 43">
@@ -36,21 +38,35 @@ const MotorhuisLogo = () => (
 );
 
 function MainPage() {
+  const [currentStep, setCurrentStep] = useState('product');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleNext = () => {
+    setCurrentStep('payment');
+  };
+
+  const handlePrevious = () => {
+    setCurrentStep('product');
+  };
+
   return (
     <>
       <div className="header w-full">
         <MotorhuisLogo />
         <BluecurrentLogo />
       </div>
-      <div>
-        <div className="products w-full">
-          <div className="text">
-            <span class="Motorhuis-laadpunt-s Text-Style-3">Motorhuis laadpunt samenstellen</span><br/>
-            <span class="Wat-voor-laadpunt-wi Text-Style-4">Wat voor laadpunt wil je?</span><br/>
-            <span class="De-UMOVE-is-ons-par Text">Tekst</span><br/>
-          </div>
-        </div>
-      </div>
+      {currentStep === 'product' ? (
+        <ProductSelection 
+          onNext={handleNext}
+          selectedProduct={selectedProduct}
+          setSelectedProduct={setSelectedProduct}
+        />
+      ) : (
+        <Payment 
+          onPrevious={handlePrevious}
+          selectedProduct={selectedProduct}
+        />
+      )}
     </>
   );
 }

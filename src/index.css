@@ -2,20 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html, #root {
+  height: 100%;
+}
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
 
   --dodger-blue: #39f;
   --ice-blue: #e5f2ff;
@@ -23,28 +18,8 @@
   --ice-blue-two: #eef7ff;
 }
 
-@font-face {
-  font-family: MuseoSans;
-  src: local(MuseoSans-300),
-    url(/path/to/MuseoSans-300.woff2) format("woff2"),
-    url(/path/to/MuseoSans-300.woff) format("woff"),
-    url(/path/to/MuseoSans-300.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-family: MuseoSans;
-  src: local(MuseoSans-700),
-    url(/path/to/MuseoSans-700.woff2) format("woff2"),
-    url(/path/to/MuseoSans-700.woff) format("woff"),
-    url(/path/to/MuseoSans-700.ttf) format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-}
 .Text-Style-4 {
-  font-family: MuseoSans;
+  font-family: sans-serif;
   font-size: 2rem;
   font-weight: bold;
   font-stretch: normal;
@@ -54,7 +29,7 @@
   color: #093550;
 }
 .Text-Style-2 {
-  font-family: MuseoSans;
+  font-family: sans-serif;
   font-size: 1.125rem;
   font-weight: bold;
   font-stretch: normal;
@@ -64,7 +39,7 @@
   color: #fff;
 }
 .Text-Style {
-  font-family: MuseoSans;
+  font-family: sans-serif;
   font-size: 1.125rem;
   font-weight: bold;
   font-stretch: normal;
@@ -74,7 +49,7 @@
   color: var(--dodger-blue);
 }
 .Keuzekop {
-  font-family: MuseoSans;
+  font-family: sans-serif;
   font-size: 1.125rem;
   font-weight: bold;
   font-stretch: normal;
@@ -84,7 +59,7 @@
   color: #093550;
 }
 .Text-Style-3 {
-  font-family: MuseoSans;
+  font-family: sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
   font-stretch: normal;
@@ -94,7 +69,7 @@
   color: #2aa5ff;
 }
 .Text {
-  font-family: MuseoSans;
+  font-family: sans-serif;
   font-size: 1rem;
   font-weight: 300;
   font-stretch: normal;
@@ -103,14 +78,150 @@
   letter-spacing: normal;
   color: #58727e;
 }
+
+form {
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(13, 38, 53, 0.19);
+  background-color: #fff;
+}
+
 input {
-  font-family: MuseoSans;
+  position: relative;
+  height: 3rem;
+  padding-left: 1rem;
+  padding-top: 0.75rem;
+  font-family: sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 2;
-  letter-spacing: normal;
+  color: #6b9bc4;
+  border-radius: 8px;
+  background-color: rgba(229, 242, 255, 0.14);
+  border: solid 1px #b1cde9;
+}
+
+
+.input-container {
+  position: relative;
+}
+
+.floating-input {
+  position: relative;
+  width: 100%;
+  padding: 0.75rem 1rem 0 1rem;
+  font-family: sans-serif;
   color: #6b9bc4;
 }
 
+.floating-input:focus {
+  outline: none;
+  border-color: var(--dodger-blue);
+}
+
+.floating-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: #6b9bc4;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  top: 0.25rem;
+  transform: translateY(0);
+  font-size: 0.75rem;
+  color: var(--dodger-blue);
+  background-color: white;
+  padding: 0 0.25rem;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #003e5b;
+}
+
+.smile {
+  stroke: var(--dodger-blue);
+  stroke-width: 2;
+}
+
+.Oval {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--ice-blue-two);
+}
+
+.Link {
+  width: 7.75rem;
+  height: 1.5rem;
+  color: #58727e;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.arrow {
+  width: 0.8rem;
+  height: 0.8rem;
+  color: #0074e8;
+}
+
+.arrow-right {
+  transform: rotate(90deg);
+  justify-self: right;
+}
+
+.arrow-left {
+  transform: rotate(-90deg);
+}
+
+.Button {
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.previous {
+  gap: 1rem;
+  position: absolute;
+  width: max-content;
+  height: 2.75rem;
+  border-radius: 8px;
+  border: solid 1px var(--dodger-blue);
+  background-color: #fff;
+  bottom: -20px;
+  left: 90px;
+  align-items: center;
+}
+
+.next {
+  gap: 6rem;
+  position: absolute;
+  border-radius: 8px;
+  right: 90px;
+  bottom: -20px;
+  width: max-content;
+  height: 2.75rem;
+  border-radius: 8px;
+  background-color: var(--dodger-blue);
+}
+
+.next-button {
+  gap: 1rem;
+  width: max-content;
+  height: 2.75rem;
+  margin: 0 2.063rem 0 0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: var(--dodger-blue); 
+}

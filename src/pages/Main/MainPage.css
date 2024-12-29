@@ -3,16 +3,238 @@
 @tailwind utilities;
 
 .header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:space-around;
-    padding: 10px;
-    background-color: var(--white);
+  height: 10dvh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: var(--white);
+}
+
+.contents-container {
+  width: 100%;
+  padding-bottom: 140px;
+  height: 100%;
+  align-content: center;
+  justify-items: center;
+}
+
+.background {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  min-width: 80%;
+  min-height: 80%;
+  background-color: var(--ice-blue);
+}
+
+.text-section {
+  padding-top: 10%;
+  height: fit-content;
+}
+
+.price, .product-price{
+  color: var(--dodger-blue);
+}
+
+.product-options {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.product-card-background {
+  height: 65%;
+  width: 40%;
+}
+
+.product-card-title {
+  color: #093550;
+}
+
+.product-selected {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.13);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-unselected {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card-title-background {
+  background: linear-gradient(to top, 
+      rgba(255, 255, 255, 1) 60%,
+      rgba(255, 255, 255, 0.7) 80%,
+      rgba(255, 255, 255, 0.4) 90%,
+      rgba(255, 255, 255, 0) 100% );
+  height: 5rem;
+}
+
+.price {
+  position: absolute;
+  right: 180px;
+  bottom: -90px;
+}
+
+.payments-background {
+  display: grid;
+  width: 80%;
+  justify-content: space-around;
+  gap: 10%;
+  padding: 2%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.payment-chosen-product {
+  width: 100%;
+  grid-column: 1/1;
+  grid-row: 2/5;
+  margin-bottom: 10%;
+  gap: 1rem;
+  align-content: end;
+}
+
+.payment-chosen-product-image {
+  aspect-ratio: 3/4;
+}
+
+.payment-form {
+  grid-column: 2/3;
+  grid-row: 1/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 80%;
+}
+
+.progress-bar {
+  position: absolute;
+  top: -7px;
+  left: 40px;
+}
+
+.progress-bar-fill, .progress-bar-circle {
+  background-color: var(--dodger-blue);
+}
+
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+
+  #zipcode-input {
+    width: 150%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+
+  svg {
+    width: 50%;
   }
 
+  .contents-container {
+    padding-bottom: 5rem;
+  }
 
-.products {
-    border-radius: 10px;
-    background-color: var(--ice-blue);
+  .background {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 3fr 0.3fr 0.3fr;
+    padding-bottom: 5rem;
+    width: 100%;
+  }
+
+  .product-options {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-section {
+    grid-row: 2/3;
+    width: 60%;
+  }
+
+  .product-card-background {
+    height: 40%;
+    width: 60%;
+  }
+
+  .product-info {
+    justify-self: center;
+    flex-direction: row;
+  }
+
+  .payments-background {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 2fr 3fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .payment-chosen-product {
+    grid-row: 3/4;
+    margin: 0;
+    width: 100%;
+    align-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+  }
+  
+  .payment-chosen-product-image {
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    }
+
+  .payment-form {
+    grid-row: 4/4;
+    grid-column: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 80%;
+  }
+
+  #adress-section {
+    flex-wrap: wrap;
+  }
+
+  .previous, .next, .progress-bar, .price{
+    position: relative;
+  }
+
+  .price {
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .previous {
+    left: 0;
+    bottom: 0;
+  }
+
+  .next {
+    gap: 1rem;
+    bottom: 0;
+    right: 0;
+  }
+
+  .next-button {
+    margin: 0;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .progress-bar {
+    width: 100%;
+    top: auto;
+    left: auto;
+    height: min-content;
+    grid-row: 1/2;
+  }
 }
+
